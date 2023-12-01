@@ -10,6 +10,6 @@ app.get('/service1/hello', (req, res) => {
 });
 const port = 4001;
 app.listen(port, () => {
-  console.log(`Service 1 listening at http://localhost:${port}`);
+  console.log(`Service 1 listening at http://localhost:${port} `);
 });
 
