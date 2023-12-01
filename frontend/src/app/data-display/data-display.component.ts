@@ -13,11 +13,30 @@ export class DataDisplayComponent implements OnInit {
   constructor(private apiService: ApiService) { }
 
   ngOnInit(): void {
-    this.apiService.getData().subscribe((data: any) => {
-      console.log(data);
-      this.stuff = JSON.stringify(data);
-    }, (err: any) => {
-      this.stuff = err.message;
-    });
+    this.getData1();
+  }
+
+  getData1(): void {
+    this.apiService.getData1().subscribe(
+      (data: any) => {
+        console.log(data);
+        this.stuff = JSON.stringify(data);
+      },
+      (err: any) => {
+        this.stuff = err.message;
+      }
+    );
+  }
+
+  getData2(): void {
+    this.apiService.getData2().subscribe(
+      (data: any) => {
+        console.log(data);
+        this.stuff = JSON.stringify(data);
+      },
+      (err: any) => {
+        this.stuff = err.message;
+      }
+    );
   }
 }

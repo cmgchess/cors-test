@@ -5,13 +5,14 @@ const cors = require("cors");
 const dataRouter = require('./dataRouter');
 
 //comment and try
-app.use(cors());
+// app.use(cors());
 
-// app.use(
-//     cors({
-//       origin: "http://localhost:4201",
-//     })
-//   );
+app.use(
+    cors({
+      origin: "http://localhost:4200",
+      methods: ["GET"],
+    })
+  );
 
 app.use(express.json());
 
