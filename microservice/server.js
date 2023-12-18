@@ -21,25 +21,19 @@ const server = http.createServer((req, res) => {
   if (ENABLE_CORS) {
     enableCors(req, res, () => {
       if (req.url.startsWith("/service1")) {
-        console.log("service 1 before proxy with cors");
         service1Proxy(req, res);
       } else if (req.url.startsWith("/service2")) {
-        console.log("service 2 before proxy with cors");
         service2Proxy(req, res);
       } else {
-        console.log("nothing here with cors"); 
         res.end("Nothing here!");
       }
     });
   } else {
     if (req.url.startsWith("/service1")) {
-      console.log("service 1 before proxy without cors");
       service1Proxy(req, res);
     } else if (req.url.startsWith("/service2")) {
-      console.log("service 2 before proxy without cors");
       service2Proxy(req, res);
     } else {
-      console.log("nothing here without cors");
       res.end("Nothing here!");
     }
   }
