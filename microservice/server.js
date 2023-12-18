@@ -18,7 +18,6 @@ const enableCors = cors({
 });
 const ENABLE_CORS = true;
 const server = http.createServer((req, res) => {
-  console.log(req.headers)
   if (ENABLE_CORS) {
     enableCors(req, res, () => {
       if (req.url.startsWith("/service1")) {
